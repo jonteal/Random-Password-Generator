@@ -74,5 +74,6 @@ alert(finalPassword);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+// document.querySelector(#password).innerHTML = finalPassword;
 
 
