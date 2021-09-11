@@ -1,9 +1,8 @@
-// Assignment Code
+// Variable Assignments
 var generateBtn = document.querySelector("#generate");
 var storedPassword = [];
 var numberLength = 0;
 var finalPassword = "";
-
 
 // Write password to the #password input
 function writePassword() {
@@ -16,28 +15,28 @@ if((numberRange < 8) || (numberRange > 128)) {
 else{
   numberLength = numberRange;
 }
-  
+ 
+// Declaring Variables for All Confirm Statements
   var uppercase = confirm('Do you want to use uppercase letters?');
   var lowercase = confirm('Do you want to use lowercase letters?');
-  var numbers = confirm('Do you want to use numbers?');
+  var number = confirm('Do you want to use numbers?');
   var character = confirm('Do you want to use special characters?');
 
-  // Random Character Generate Functions 
+
+// Random Character Generate Functions 
 
 // Random uppercase letter generator
 if(uppercase) {
   for (let i = 65; i <= 90; i++) {
     storedPassword.push(i);
   }
-alert(storedPassword);
 
 // Random lowercase letter generator
-if(uppercase) {
+if(lowercase) {
   for (let i = 97; i <= 122; i++) {
     storedPassword.push(i);
   }
 }
-alert(storedPassword);
 
 // Random number generator
 if(number) {
@@ -45,8 +44,6 @@ if(number) {
     storedPassword.push(i);
   }
 }
-alert(storedPassword);
-
 
 // Random special character generator
 if(character) {
@@ -62,29 +59,18 @@ if(character) {
     }
     }
 }
-alert(storedPassword);
-
-
 
 for(i = 0; i < numberLength; i++) {
   var randomChar = Math.floor(Math.random() * storedPassword.length);
-  alert(randomChar);
   finalPassword += String.fromCharCode(storedPassword[randomChar]);
 }
 
-
-alert(finalPassword);
-  
-  
-  
+alert(finalPassword);  
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
