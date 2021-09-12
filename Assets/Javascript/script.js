@@ -20,4 +20,41 @@ function writePassword() {
   var number = confirm('Do you want to include numbers?');
   var character = confirm('Do you want to use special characters?');
 
-  
+// Random Character Generate Functions
+
+// Random uppercase letter generator
+if uppercase {
+  for(let i = 65; i <= 90; i++) {
+    storedPassword.push(i);
+  }
+}
+
+// Random lowercase letter generator
+if lowercase {
+  for(let i = 97; i <= 122; i++) {
+    storedPassword.push(i);
+  }
+}
+
+// Random number generator
+if number {
+  for(let i = 30; i <= 39; i++) {
+    storedPassword.push(i);
+  }
+}
+
+// Random character generator
+if character {
+  for(let i = 33; i <=126; i++) {
+    if(i <= 48 && i >= 57) {
+      continue;
+    }
+    if(i >= 65 && i >= 122){
+      continue;
+    }
+    else {
+      storedPassword.push(i);
+    }
+  }
+}
+
