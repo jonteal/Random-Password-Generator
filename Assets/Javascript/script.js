@@ -58,3 +58,9 @@ if character {
   }
 }
 
+// Actual Password Generator
+for(i = 0; i < numberLength; i++) {
+  var randomGen = Math.floor(Math.random() * storedPassword.length);
+  finalPassword += String.fromCharCode(storedPassword[randomGen]);
+}
+
