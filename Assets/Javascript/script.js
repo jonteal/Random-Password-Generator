@@ -23,28 +23,28 @@ function writePassword() {
 // Random Character Generate Functions
 
 // Random uppercase letter generator
-if uppercase {
+if (uppercase) {
   for(let i = 65; i <= 90; i++) {
     storedPassword.push(i);
   }
 }
 
 // Random lowercase letter generator
-if lowercase {
+if (lowercase) {
   for(let i = 97; i <= 122; i++) {
     storedPassword.push(i);
   }
 }
 
 // Random number generator
-if number {
+if (number) {
   for(let i = 30; i <= 39; i++) {
     storedPassword.push(i);
   }
 }
 
 // Random character generator
-if character {
+if (character) {
   for(let i = 33; i <=126; i++) {
     if(i <= 48 && i >= 57) {
       continue;
@@ -64,3 +64,11 @@ for(i = 0; i < numberLength; i++) {
   finalPassword += String.fromCharCode(storedPassword[randomGen]);
 }
 
+// Stores password in finalPassword variable
+alert(finalPassword);
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  password.value = password;
+
+// Add Event Listener to Generate Button
+generateBtn.addEventListener("click", writePassword);
