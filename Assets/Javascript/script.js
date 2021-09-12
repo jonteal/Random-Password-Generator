@@ -14,3 +14,10 @@ function writePassword() {
   numberLength = numberRange;
 }
 
+// Declaring Variables for all Confirm Statements
+  var uppercase = confirm('Do you want to use uppercase letters?');
+  var lowercase = confirm('Do you want to use lowercase letters?');
+  var number = confirm('Do you want to include numbers?');
+  var character = confirm('Do you want to use special characters?');
+
+  
