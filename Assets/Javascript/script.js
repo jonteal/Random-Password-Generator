@@ -6,12 +6,17 @@ var finalPassword = "";
 
 // Write password to the password input
 function writePassword() {
-  var numberRange = prompt('Please enter a number between 8 - 128.')
+  
+  var numberRange = prompt("Please enter a number between 8 - 128.");
 
   if((numberRange < 8) || (numberRange > 128)) {
-    alert('Please pick a number between 8 - 128!')
+    alert("Please pick a number between 8 - 128!")
   }
-  numberLength = numberRange;
+  if(!numberRange){
+    return;
+  }
+  else{
+    numberLength = numberRange;
 }
 
 // Declaring Variables for all Confirm Statements
@@ -60,15 +65,16 @@ if (character) {
 
 // Actual Password Generator
 for(i = 0; i < numberLength; i++) {
-  var randomGen = Math.floor(Math.random() * storedPassword.length);
-  finalPassword += String.fromCharCode(storedPassword[randomGen]);
+  var randomChar = Math.floor(Math.random() * storedPassword.length);
+  finalPassword += String.fromCharCode(storedPassword[randomChar]);
 }
 
 // Stores password in finalPassword variable
 alert(finalPassword);
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  password.value = password;
+  passwordText.value = password;
 
 // Add Event Listener to Generate Button
 generateBtn.addEventListener("click", writePassword);
+}
