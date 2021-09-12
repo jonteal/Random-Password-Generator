@@ -10,7 +10,7 @@ function writePassword() {
   var numberRange = prompt("Please enter a number between 8 - 128.");
 
   if((numberRange < 8) || (numberRange > 128)) {
-    alert("Please pick a number between 8 - 128!")
+    // alert("Please pick a number between 8 - 128!")
   }
   if(!numberRange){
     return;
@@ -20,12 +20,12 @@ function writePassword() {
 }
 
 // Declaring Variables for all Confirm Statements
-  var uppercase = confirm('Do you want to use uppercase letters?');
-  var lowercase = confirm('Do you want to use lowercase letters?');
-  var number = confirm('Do you want to include numbers?');
-  var character = confirm('Do you want to use special characters?');
+  var uppercase = confirm("Do you want to use uppercase letters?");
+  var lowercase = confirm("Do you want to use lowercase letters?");
+  var number = confirm("Do you want to include numbers?");
+  var character = confirm("Do you want to use special characters?");
 
-// Random Character Generate Functions
+// Random Character If Statements
 
 // Random uppercase letter generator
 if (uppercase) {
