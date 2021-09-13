@@ -1,6 +1,6 @@
 // Assigning Variables
 
-var storedPassword;
+var userInput;
 var useUppercase;
 var useLowercase;
 var useNumbers;
@@ -19,9 +19,25 @@ var generate = document.querySelector("#generate");
 generate.addEventListener("click", function () {
     finalPassword = generatePassword();
     document.getElementById("password").placeholder = finalPassword;
-}
+});
 
-);
+
+function generatePassword() {
+
+    userInput = parseInt(prompt("Choose a number between 8 - 128!"));
+
+    if (!userInput) {
+        alert("In order to proceed, you must enter a number.");
+    } else if (userInput < 8 || userInput > 128) {
+        userInput = parseInt(prompt("The number you enter must be between 8 - 128."));
+
+    } else {
+        useUppercase = confirm("Do you wish to include uppercase letters?");
+        useLowercase = confirm("Do you wish to include lowercase letters?");
+        useNumbers = confirm("Do you wish to include numbers?");
+        useSymbols = confirm("Do you wish to include special characters or symbols?");
+    }
+}
 
 var passwordLength = []
 var finalPassword = passwordLength.join("");
