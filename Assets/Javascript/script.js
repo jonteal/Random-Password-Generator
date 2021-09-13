@@ -64,27 +64,25 @@ else if (useSymbols) {
 // If Statement for 2 Criteria Selected
 else if (useUppercase && useLowercase) {
     selectedCriteria = randomUppercase.concat(randomLowercase);
-}
 
-else if (useUppercase && useNumbers) {
+} else if (useUppercase && useNumbers) {
     selectedCriteria = randomUppercase.concat(randomNumbers);
-}
 
-else if (useUppercase && useSymbols) {
+} else if (useUppercase && useSymbols) {
     selectedCriteria = randomUppercase.concat(randomSymbols);
 }
 
 else if (useLowercase && useNumbers) {
     selectedCriteria = randomLowercase.concat(randomNumbers);
-}
 
-else if (useLowercase && useSymbols) {
+} else if (useLowercase && useSymbols) {
     selectedCriteria = randomLowercase.concat(randomSymbols);
-}
 
-else if (useNumbers && useSymbols) {
+} else if (useNumbers && useSymbols) {
     selectedCriteria = randomNumbers.concat(randomSymbols);
 }
+
+
 
 
 
