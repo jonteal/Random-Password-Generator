@@ -39,11 +39,27 @@ function generatePassword() {
     }
 };
 
+// If Statement for No Criteria Selected
 if (!useUppercase && !useLowercase && !useNumbers && !useSymbols) {
     selectedCriteria = alert("You must choose at least one!");
 }
 
+// If Statement for 1 Criteria Selected
+else if (useUppercase) {
+    selectedCriteria = randomUppercase;
+}
 
+else if (useLowercase) {
+    selectedCriteria = randomLowercase;
+}
+
+else if (useNumbers) {
+    selectedCriteria = randomNumbers;
+}
+
+else if (useSymbols) {
+    selectedCriteria = randomSymbols;
+}
 
 
 
