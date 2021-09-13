@@ -99,7 +99,10 @@ else if (useLowercase && useNumbers && useSymbols) {
     selectedCriteria = randomLowercase.concat(randomNumbers, randomSymbols);
 }
 
-
+// If Statement for All 4 Criteria Selected
+else if (useUppercase && useLowercase && useNumbers && useSymbols) {
+    selectedCriteria = randomUppercase.concat(randomLowercase, randomNumbers, randomSymbols);
+}
 
 
 
