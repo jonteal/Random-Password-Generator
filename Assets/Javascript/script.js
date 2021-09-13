@@ -115,3 +115,9 @@ for (var i = 0; i < userInput; i++) {
 
 
 var finalPassword = passwordLength.join("");
+Input(finalPassword);
+return finalPassword;
+
+function Input(finalPassword) {
+    document.getElementById("password").textContent = finalPassword;
+}
