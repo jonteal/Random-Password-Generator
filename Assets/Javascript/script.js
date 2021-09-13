@@ -37,7 +37,15 @@ function generatePassword() {
         useNumbers = confirm("Do you wish to include numbers?");
         useSymbols = confirm("Do you wish to include special characters or symbols?");
     }
+};
+
+if (!useUppercase && !useLowercase && !useNumbers && !useSymbols) {
+    selectedCriteria = alert("You must choose at least one!");
 }
+
+
+
+
 
 var passwordLength = []
 var finalPassword = passwordLength.join("");
