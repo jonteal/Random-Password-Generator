@@ -82,6 +82,25 @@ else if (useLowercase && useNumbers) {
     selectedCriteria = randomNumbers.concat(randomSymbols);
 }
 
+// If Statement for 3 Criteria Selected
+else if (useUppercase && useLowercase && useNumbers) {
+    selectedCriteria = randomUppercase.concat(randomLowercase, randomNumbers);
+}
+
+else if (useUppercase && useLowercase && useSymbols) {
+    selectedCriteria = randomUppercase.concat(randomLowercase, randomSymbols);
+}
+
+else if (useUppercase && useNumbers && useSymbols) {
+    selectedCriteria = randomUppercase.concat(randomNumbers, randomSymbols);
+}
+
+else if (useLowercase && useNumbers && useSymbols) {
+    selectedCriteria = randomLowercase.concat(randomNumbers, randomSymbols);
+}
+
+
+
 
 
 
