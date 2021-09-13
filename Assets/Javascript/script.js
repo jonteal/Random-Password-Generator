@@ -104,13 +104,14 @@ else if (useUppercase && useLowercase && useNumbers && useSymbols) {
     selectedCriteria = randomUppercase.concat(randomLowercase, randomNumbers, randomSymbols);
 }
 
-
-
-
-
-
-
-
-
+// Empty array for password to pass into
 var passwordLength = []
+
+// Actual Randomizer for Password
+for (var i = 0; i < userInput; i++) {
+    var randomPassword = selectedCriteria[Math.floor(Math.random() * selectedCriteria.length)];
+    passwordLength.push(randomPassword);
+}
+
+
 var finalPassword = passwordLength.join("");
