@@ -1,5 +1,5 @@
 // Assigning Variables
-var userInput;
+var userPicks;
 var useUppercase;
 var useLowercase;
 var useNumbers;
@@ -12,7 +12,7 @@ randomLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 randomNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 randomSymbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "~", "`", "|", "/", "}", "{", "[", "]", "<", ">", "?", "-", "+"];
 
-// Declaring Variable to Use Validating Selected Criteria Below
+// Declaring Variable to Use for Validating Selected Criteria Below
 var selectedCriteria;
 
 // Variable to Select the "Generate" Button in HTML
@@ -25,19 +25,20 @@ generate.addEventListener("click", function () {
 });
 
 
+
 // Generate Password Function
 function generatePassword() {
 
 // Choose a Number between 8 - 128
-    userInput = parseInt(prompt("Choose a number between 8 - 128!"));
+    userPicks = parseInt(prompt("Choose a number between 8 - 128!"));
 
-// If Statement for if No Selection is Made
-    if (!userInput) {
+// If Statement for When No Selection is Made
+    if (!userPicks) {
         alert("In order to proceed, you must enter a number.");
 
 // If Statement for if Selection is outside of Specified Range
-    } else if (userInput < 8 || userInput > 128) {
-        userInput = parseInt(prompt("The number you enter must be between 8 - 128."));
+    } else if (userPicks < 8 || userPicks > 128) {
+        userPicks = parseInt(prompt("The number you enter must be between 8 - 128."));
 
 // Else Confirm Promps to Select for Uppercase, Lowercase, Numbers, or Symbols
     } else {
@@ -46,7 +47,7 @@ function generatePassword() {
         useNumbers = confirm("Do you wish to include numbers?");
         useSymbols = confirm("Do you wish to include special characters or symbols?");
     }
-};
+
 
 // If Statement for No Criteria Selected
 if (!useUppercase && !useLowercase && !useNumbers && !useSymbols) {
@@ -114,20 +115,22 @@ else if (useUppercase && useLowercase && useNumbers && useSymbols) {
 }
 
 // Empty array for password to pass into
-var passwordLength = []
+var passwordLength = [];
 
 // Actual Randomizer for Password
-for (var i = 0; i < userInput; i++) {
+for (var i = 0; i < userPicks; i++) {
     var randomPassword = selectedCriteria[Math.floor(Math.random() * selectedCriteria.length)];
     passwordLength.push(randomPassword);
+    console.log("test for loop");
 }
 
 // Variable to Hold Password Once Random Outputs have been Joined
 var finalPassword = passwordLength.join("");
-Input(finalPassword);
-return finalPassword;
+UserInput(finalPassword);
+console.log(finalPassword);
 
 // Input Final Password into Text Area on Page
-function Input(finalPassword) {
+function UserInput(finalPassword) {
     document.getElementById("password").textContent = finalPassword;
 }
+};
