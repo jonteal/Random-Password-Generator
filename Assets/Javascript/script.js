@@ -1,21 +1,20 @@
-// Assigning Variables
+// Globally Declared Variables
 var userPicks;
 var useUppercase;
 var useLowercase;
 var useNumbers;
 var useSymbols;
 
-// Listing out Full Arrays of Possible Characters for 
-// Uppercase, Lowercase, Numbers, and  Symbols
+// Arrays of Possible Characters
 randomUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 randomLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 randomNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 randomSymbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "~", "`", "|", "/", "}", "{", "[", "]", "<", ">", "?", "-", "+"];
 
-// Declaring Variable to Use for Validating Selected Criteria Below
+// Use for Validating Selected Criteria Below
 var selectedCriteria = [];
 
-// Variable to Select the "Generate" Button in HTML
+// Select the "Generate" Button in HTML
 var generate = document.querySelector("#generate");
 
 // Click Event to Begin Prompts
@@ -47,46 +46,44 @@ function generatePassword() {
         useSymbols = confirm("Do you wish to include special characters or symbols?");
     }
 
-if (useUppercase) {
-    selectedCriteria = selectedCriteria.concat(randomUppercase);
-}
+    if (useUppercase) {
+        selectedCriteria = selectedCriteria.concat(randomUppercase);
+    }
 
-if (useLowercase) {
-    selectedCriteria = selectedCriteria.concat(randomLowercase);
-}
+    if (useLowercase) {
+        selectedCriteria = selectedCriteria.concat(randomLowercase);
+    }
 
-if (useNumbers) {
-    selectedCriteria = selectedCriteria.concat(randomNumbers);
-}
+    if (useNumbers) {
+        selectedCriteria = selectedCriteria.concat(randomNumbers);
+    }
 
-if (useSymbols) {
-    selectedCriteria = selectedCriteria.concat(randomSymbols);
-}
+    if (useSymbols) {
+        selectedCriteria = selectedCriteria.concat(randomSymbols);
+    }
 
 
     // If Statement for No Criteria Selected
-if (!useUppercase && !useLowercase && !useNumbers && !useSymbols) {
-     selectedCriteria = alert("You must choose at least one!");
-};
+    if (!useUppercase && !useLowercase && !useNumbers && !useSymbols) {
+        selectedCriteria = alert("You must choose at least one!");
+    };
 
+    // Empty array for password to pass into
+    var passwordArray = [];
 
-// Empty array for password to pass into
-var passwordArray = [];
+    // Actual Randomizer for Password
+    for (var i = 0; i < userPicks; i++) {
+        var randomPassword = selectedCriteria[Math.floor(Math.random() * selectedCriteria.length)];
+        passwordArray.push(randomPassword);
+    }
 
-// Actual Randomizer for Password
-for (var i = 0; i < userPicks; i++) {
-    var randomPassword = selectedCriteria[Math.floor(Math.random() * selectedCriteria.length)];
-    passwordArray.push(randomPassword);
-    // console.log("test for loop");
-}
+    // Variable to Hold Password Once Random Outputs have been Joined
+    var finalPassword = passwordArray.join("");
+    UserInput(finalPassword);
+    console.log(finalPassword);
 
-// Variable to Hold Password Once Random Outputs have been Joined
-var finalPassword = passwordArray.join("");
-UserInput(finalPassword);
-console.log(finalPassword);
-
-// Input Final Password into Text Area on Page
-function UserInput(finalPassword) {
-    document.getElementById("password").textContent = finalPassword;
-}
+    // Input Final Password into Text Area on Page
+    function UserInput(finalPassword) {
+        document.getElementById("password").textContent = finalPassword;
+    }
 };
