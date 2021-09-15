@@ -17,3 +17,8 @@ GNU General Public License v3.0
 ## Features
 Allows the user to generate an unlimited number of random unique passwords between 8 and 128 characters in length with their choice of uppercase letters, lowercase letters, numbers, and symbols. 
 
+## Deployed URL
+https://jonteal.github.io/Random-Password-Generator/
+
+## Github Repository
+https://github.com/jonteal/Random-Password-Generator
